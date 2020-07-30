@@ -1,0 +1,14 @@
+div.random-image-div {
+  background-image: url(https://source.unsplash.com/random);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+}
