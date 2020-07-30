@@ -1,0 +1,14 @@
+img.card-img {
+  width: 150px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.down-arrow-image {
+  width: 20px;
+}
+
+img.up-arrow-image {
+  width: 20px;
+}

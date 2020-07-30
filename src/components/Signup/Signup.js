@@ -38,12 +38,41 @@ class Signup extends Component {
             password: '',
             email: '',
             phone: '',
-            profession: '',
-            selectedOption: null
+            profession: ''
         }
     }
 
+    handleChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value });
+    }
+
+    handleDropdown = (e) => {
+        this.setState({ profession: e.value });
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state);
+        const obj = {
+            username: this.state.username,
+            password: this.state.password,
+            email: this.state.email,
+            phone: this.state.phone,
+            profession: this.state.profession
+        }
+        localStorage.clear();
+        localStorage.setItem('username', obj.username);
+        localStorage.setItem('password', obj.password);
+        localStorage.setItem('email', obj.email);
+        localStorage.setItem('phone', obj.phone);
+        localStorage.setItem('profession', obj.profession);
+
+        alert('Sign Up Successful');
+        window.location="/login";
+    }
+
     render() {
+
         return (
             <>
                 <Container fluid>
@@ -101,8 +130,9 @@ class Signup extends Component {
                                     <Col lg="12">
                                         <FormGroup>
                                             <Label for="profession">Profession</Label>
-                                            <Select options={options} value={this.state.selectedOption}
-                                                name="selectedOption"></Select>
+                                            <Select options={options} value={this.state.profession.value}
+                                                name="profession"
+                                                onChange={(e) => this.handleDropdown(e)}></Select>
                                         </FormGroup>
                                     </Col>
 

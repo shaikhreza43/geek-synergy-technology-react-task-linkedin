@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home';
 import { PrivateRoute } from './utils/PrivateRoute';
+import CompanyInfo from './components/CompanyInfo/CompanyInfo';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Switch>
             <Route path="/login" component={Login}></Route>
             <Route path="/signup" component={Signup}></Route>
-            <PrivateRoute exact path="/" component={Home}></PrivateRoute>
+            <PrivateRoute path="/" component={Home}></PrivateRoute>
             <Redirect from="*" to="/"></Redirect>
           </Switch>
         </Suspense>

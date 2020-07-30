@@ -22,6 +22,9 @@ overflow:hidden;
 margin-right:-30px;
 `
 
+const username = localStorage.getItem('username');
+const password = localStorage.getItem('password');
+
 class Login extends Component {
 
     constructor(props) {
@@ -29,6 +32,25 @@ class Login extends Component {
         this.state = {
             username: '',
             password: ''
+        }
+    }
+
+    handleChange=(e)=>{
+        this.setState({[e.target.name]:e.target.value});
+    }
+
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log(this.state);
+        if(this.state.username===username && this.state.password===password){
+            
+            console.log('Login Successful');
+            window.location="/";
+        }
+
+        else{
+            alert('Invalid Credentials Entered!!!');
+            console.log('Invalid Credentials');
         }
     }
 
