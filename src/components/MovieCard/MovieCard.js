@@ -12,7 +12,7 @@ class MovieCard extends Component {
         this.state = {
             movieData: [],
             category: 'movies',
-            language: 'Kannada',
+            language: 'Hindi',
             genre: 'all',
             sort: 'voting'
         }
@@ -31,7 +31,7 @@ class MovieCard extends Component {
             sort: this.state.sort
         }
 
-        fetch('https://cors-anywhere.herokuapp.com/https://hoblist.com/movieList', {
+        fetch('/movieList', {
             method: 'POST',
             body: JSON.stringify(requestObj),
             headers: {
