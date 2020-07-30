@@ -12,7 +12,7 @@ class MovieCard extends Component {
         this.state = {
             movieData: [],
             category: 'movies',
-            language: 'Hindi',
+            language: 'Kannada',
             genre: 'all',
             sort: 'voting'
         }
