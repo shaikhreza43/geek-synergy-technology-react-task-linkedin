@@ -31,7 +31,7 @@ class MovieCard extends Component {
             sort: this.state.sort
         }
 
-        fetch('/movieList', {
+        fetch('https://cors-anywhere.herokuapp.com/https://hoblist.com/movieList', {
             method: 'POST',
             body: JSON.stringify(requestObj),
             headers: {
